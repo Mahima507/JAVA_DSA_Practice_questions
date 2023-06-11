@@ -1,0 +1,34 @@
+// 5. Check the Given Number is Prime or Not?
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        int num = scanner.nextInt();
+        scanner.close();
+
+        if (isPrime(num)) {
+            System.out.println(num + " is a prime number.");
+        } else {
+            System.out.println(num + " is not a prime number.");
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        return isPrimeNum(num, num / 2);
+    }
+
+    public static boolean isPrimeNum(int num, int divisor) {
+        if (divisor <= 1) {
+            return true;
+        } else {
+            if (num % divisor == 0) {
+                return false;
+            } else {
+                return isPrimeNum(num, divisor - 1);
+            }
+        }
+    }
+}
