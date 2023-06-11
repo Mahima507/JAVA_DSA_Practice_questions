@@ -14,26 +14,14 @@ b) Stack Falling return type
 
 
 2. Count Zero in a Given Number
-
-Num = 102030
-
-Count 0 - 3
-
-
-
-
+  Num = 102030
+  Count 0 - 3
 
 3. Sum of N Natural Numbers
 
-
-
 4. 1/1^1 + 2 / 2 ^2 + 3 / 3^3 
 
-
-
 5. Check the Given Number is Prime or Not?
-
-
 
 6. Check the Given Number is Armstrong or Not?
 
