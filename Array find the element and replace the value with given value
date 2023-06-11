@@ -1,0 +1,40 @@
+// 11.Given an Array find the element and replace the value with given value, search and replace all occurrences.
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArraySearchAndReplace {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the array size
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+
+        // Read the array elements
+        System.out.println("Enter the array elements:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Read the element to search and replace
+        System.out.print("Enter the element to search: ");
+        int searchElement = scanner.nextInt();
+        System.out.print("Enter the replacement value: ");
+        int replaceValue = scanner.nextInt();
+        scanner.close();
+
+        replaceAllOccurrences(arr, searchElement, replaceValue);
+
+        System.out.println("Modified array: " + Arrays.toString(arr));
+    }
+
+    public static void replaceAllOccurrences(int[] arr, int searchElement, int replaceValue) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == searchElement) {
+                arr[i] = replaceValue;
+            }
+        }
+    }
+}
