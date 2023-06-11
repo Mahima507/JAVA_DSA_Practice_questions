@@ -7,11 +7,8 @@ a) Stack Building void
 b) Stack Falling return type
 
 
-1. Power of a Number
-
-2^5
-
-
+1. Power of a Number 
+   2^5
 
 2. Count Zero in a Given Number
   Num = 102030
@@ -31,23 +28,23 @@ b) Stack Falling return type
 
 153
 
-7Check Palindrome String
+7. Check Palindrome String
 
-8.Array Search the Element From the Last. (lastIndexOf)
+8. Array Search the Element From the Last. (lastIndexOf)
 
-9.Count all Occurrence of Search Element 
+9. Count all Occurrence of Search Element 
 
-10.Get all found element index (Search Element) , store the result in an array.
+10. Get all found element index (Search Element) , store the result in an array.
 
-11.Given an Array find the element and replace the value with given value, search and replace all occurrences.
+11. Given an Array find the element and replace the value with given value, search and replace all occurrences.
 
-12.Given a String find the adjacent element if it is same as the previous element so replace the element with #.
+12. Given a String find the adjacent element if it is same as the previous element so replace the element with #.
 
 e.g "aabbcc" 
 
 output a#b#c#
 
-13.Given a String find the adjacent element if it is same as the previous element so add the star in between
+13. Given a String find the adjacent element if it is same as the previous element so add the star in between
 
 e.g "aabbcc"
 
