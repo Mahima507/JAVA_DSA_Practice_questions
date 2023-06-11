@@ -1,0 +1,37 @@
+/*
+  12.Given a String find the adjacent element if it is same as the previous element so replace the element with #.
+  e.g "aabbcc" 
+  output a#b#c#  
+*/
+
+import java.util.Scanner;
+
+public class StringAdjacentElements {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the input string
+        System.out.print("Enter the string: ");
+        String input = scanner.nextLine();
+        scanner.close();
+
+        String result = replaceAdjacentElements(input);
+        System.out.println("Modified string: " + result);
+    }
+
+    public static String replaceAdjacentElements(String str) {
+        if (str.length() <= 1) {
+            return str;  // Base case: String has 0 or 1 character, no adjacent elements to check
+        }
+
+        char firstChar = str.charAt(0);
+        String modifiedRemaining = replaceAdjacentElements(str.substring(1));
+
+        if (firstChar == modifiedRemaining.charAt(0)) {
+            return firstChar + "#" + modifiedRemaining.substring(1);
+        } else {
+            return firstChar + modifiedRemaining;
+        }
+    }
+}
+
