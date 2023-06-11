@@ -1,0 +1,41 @@
+// 7. Check Palindrome String.
+
+import java.util.Scanner;
+
+public class PalindromeString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+        scanner.close();
+
+        if (isPalindrome(str)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
+
+    public static boolean isPalindrome(String str) {
+        int length = str.length();
+        if (length <= 1) {
+            return true;
+        } else {
+            char firstChar = Character.toLowerCase(str.charAt(0));
+            char lastChar = Character.toLowerCase(str.charAt(length - 1));
+
+            if (Character.isLetter(firstChar) && Character.isLetter(lastChar)) {
+                if (firstChar == lastChar) {
+                    String subString = str.substring(1, length - 1);
+                    return isPalindrome(subString);
+                } else {
+                    return false;
+                }
+            } else if (!Character.isLetter(firstChar)) {
+                return isPalindrome(str.substring(1));
+            } else {
+                return isPalindrome(str.substring(0, length - 1));
+            }
+        }
+    }
+}
