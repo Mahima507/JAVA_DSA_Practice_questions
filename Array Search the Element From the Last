@@ -1,0 +1,41 @@
+// 8. Array Search the Element From the Last. (lastIndexOf)
+import java.util.Scanner;
+
+public class ArraySearchLastIndex{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the array size
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+
+        // Read the array elements
+        System.out.println("Enter the array elements:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Read the element to search
+        System.out.print("Enter the element to search: ");
+        int element = scanner.nextInt();
+        scanner.close();
+
+        int lastIndex = searchLastIndex(arr, element, size - 1);
+        if (lastIndex == -1) {
+            System.out.println("Element not found in the array.");
+        } else {
+            System.out.println("Last index of the element: " + lastIndex);
+        }
+    }
+
+    public static int searchLastIndex(int[] arr, int element, int index) {
+        if (index < 0) {
+            return -1;  // Element not found
+        } else if (arr[index] == element) {
+            return index;  // Element found at current index
+        } else {
+            return searchLastIndex(arr, element, index - 1);  // Recursive call with previous index
+        }
+    }
+}
