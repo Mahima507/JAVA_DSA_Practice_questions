@@ -1,0 +1,23 @@
+// 3. Sum of N Natural Numbers.
+
+import java.util.Scanner;
+
+public class SumOfNaturalNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer N: ");
+        int N = scanner.nextInt();
+        scanner.close();
+        
+        int sum = calculateSum(N);
+        System.out.println("Sum of the first " + N + " natural numbers: " + sum);
+    }
+
+    public static int calculateSum(int N) {
+        if (N == 1) {
+            return 1;
+        } else {
+            return N + calculateSum(N - 1);
+        }
+    }
+}
