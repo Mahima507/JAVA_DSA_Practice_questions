@@ -48,4 +48,4 @@ output a#b#c#
 
 e.g "aabbcc"
 
-output a*ab*bc*c
+output a*ab*ab*c
