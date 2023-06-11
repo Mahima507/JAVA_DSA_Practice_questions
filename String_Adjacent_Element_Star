@@ -1,0 +1,35 @@
+/*  
+  13.Given a String find the adjacent element if it is same as the previous element so add the star in between
+  e.g "aabbcc"
+  output a*ab*bc*c
+*/
+import java.util.Scanner;
+
+public class StringAdjacentElementStar {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the input string
+        System.out.print("Enter the string: ");
+        String input = scanner.nextLine();
+        scanner.close();
+
+        String result = addStarsBetweenAdjacentElements(input);
+        System.out.println("Modified string: " + result);
+    }
+
+    public static String addStarsBetweenAdjacentElements(String str) {
+        if (str.length() <= 1) {
+            return str;  // Base case: String has 0 or 1 character, no adjacent elements to check
+        }
+
+        char firstChar = str.charAt(0);
+        String modifiedRemaining = addStarsBetweenAdjacentElements(str.substring(1));
+
+        if (firstChar == modifiedRemaining.charAt(0)) {
+            return firstChar + "*" + modifiedRemaining;
+        } else {
+            return firstChar + modifiedRemaining;
+        }
+    }
+}
