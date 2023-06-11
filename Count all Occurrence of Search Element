@@ -1,0 +1,53 @@
+// 9. Count all Occurrence of Search Element 
+import java.util.Scanner;
+
+public class ArraySearchLastIndexAndCountOccurrences {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the array size
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+
+        // Read the array elements
+        System.out.println("Enter the array elements:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Read the element to search
+        System.out.print("Enter the element to search: ");
+        int element = scanner.nextInt();
+        scanner.close();
+
+        int lastIndex = searchLastIndex(arr, element, size - 1);
+        int count = countOccurrences(arr, element, size - 1);
+        System.out.println("Last index of the element: " + lastIndex);
+        System.out.println("Count of occurrences: " + count);
+    }
+
+    public static int searchLastIndex(int[] arr, int element, int index) {
+        if (index < 0) {
+            return -1;  // Element not found
+        }
+
+        if (arr[index] == element) {
+            return index;  // Element found at current index
+        }
+
+        return searchLastIndex(arr, element, index - 1);  // Recursive call with previous index
+    }
+
+    public static int countOccurrences(int[] arr, int element, int index) {
+        if (index < 0) {
+            return 0;  // No more elements to check
+        }
+
+        int count = countOccurrences(arr, element, index - 1);  // Recursive call with previous index
+        if (arr[index] == element) {
+            count++;  // Increment count if element is found at current index
+        }
+        return count;
+    }
+}
